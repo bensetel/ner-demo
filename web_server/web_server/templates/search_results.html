@@ -1,0 +1,21 @@
+<h1>Search Results</h1>
+
+<h2>Articles</h2>
+<ul>
+  {% for article in article_list %}
+    <li>
+      <a href={{article.url}}> {{article.title}} </a>
+    </li>
+  {% endfor %}
+</ul>
+
+
+<h2>People</h2>
+<ul>
+  {% for person in person_list %}
+    <li>
+      <a href='https://www.google.com/search?q={{ person }}'> {{ person }} </a>
+    </li>
+  {% endfor %}
+</ul>
+
