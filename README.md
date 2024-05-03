@@ -85,7 +85,7 @@ Overall, LLaMA did quite well with this task. Inference across our ~8,600 articl
 
 ## Text Processing + Data Ingestion
 
-### [Article Processing]
+### [Article Processing](https://github.com/bensetel/ner-demo/blob/main/src/csv_processing.py)
 <!-- [UseScraper](https://usescraper.com/)'s crawler feature did not work on Above The Law. Instead, I wrote and ran [my own small scraper](https://github.com/bensetel/ner-takehome/blob/main/src/scraping/scrape_url_names.py) to populate a list of article urls, and then [called UseScraper's scrape function](https://github.com/bensetel/ner-takehome/blob/main/src/scraping/scrape_article_content.py) on each url. The list of urls is stored as a simple text file.  -->
 
 The articles are added to a Pandas dataframe with both their text and metadata, and stored as .csv files. To run articles through the model, the entire dataset is loaded into one Pandas DataFrame and [some simple preprocessing](https://github.com/bensetel/ner-takehome/blob/main/src/csv_processing.py) is then applied. The article text is extracted from the surrounding webpage content using some very simple pattern matching on site elements. Links and advertisements are removed, and the article title and url are extracted from the metadata. A dataframe containing this processed article text, url, and title for every article is then passed to the model. In total, 8,664 articles were succesfully added to our dataset and provided to the models.
