@@ -98,26 +98,10 @@ Both models' output was subject to some [simple text filtering](https://github.c
 
 
 ## [Web Server](https://github.com/bensetel/ner-takehome/tree/main/web_server/web_server)
-A very simple website is maintained at [ner-demo.xyz](http://ner-demo.xyz/) to expose a search function for each of our two databases. We use a very simple tech stack for this: Nginx -> Gunicorn -> Django (on Ubuntu, but could pretty much be any unix-like). First, the user selects a database, and then enters a law firm name. We retrieve all articles and people with connected by any edge to that firm in our knowledge graph.
+A very simple website was maintained at [ner-demo.xyz](http://ner-demo.xyz/) to expose a search function for each of our two databases. We use a very simple tech stack for this: Nginx -> Gunicorn -> Django (on Ubuntu, but could pretty much be any unix-like). First, the user selects a database, and then enters a law firm name. We retrieve all articles and people with connected by any edge to that firm in our knowledge graph.
 
-We also include links to Neo4j's database interface, mostly so that users with database logins can use Neo4j's graph visualization tools. To play around with the LLaMA-generated graph, go [here](http://163.74.91.141:7474/browser/).
+We also include links to Neo4j's database interface, mostly so that users with database logins can use Neo4j's graph visualization tools.
 
-Login is:
-
-```
-user: "neo4j"
-password: "pleasedonthackme123"
-```
-
-Try entering the following queries to get firms/people/articles, then double-click on a node to see its connectons.
-
-```
-MATCH (f:Firm) RETURN f;
-
-MATCH (p:Person) RETURN p;
-
-MATCH (a:Article) RETURN a;
-```
 
 ## Next steps
 ### Models
